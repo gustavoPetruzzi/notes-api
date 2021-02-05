@@ -12,20 +12,20 @@ const Note = sequelize.define('note', {
   },
   title: {
     type: Sequelize.STRING,
-    allowNull: false,
+    allowNull: false
   },
   content: {
     type: Sequelize.STRING,
     allowNull: true
   },
-  to: {
+  receiver: {
     type: Sequelize.INTEGER,
     references: {
       model: User,
-      key: 'id',
-    },
+      key: 'id'
+    }
   },
-  from: {
+  sender: {
     type: Sequelize.INTEGER,
     references: {
       model: User,
@@ -33,3 +33,5 @@ const Note = sequelize.define('note', {
     }
   }
 });
+
+module.exports = Note
