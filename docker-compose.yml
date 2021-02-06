@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  app:
+    image: node:12-alpine
+    command: sh -c "npm install && npm start"
+    ports:
+      - 8080:8080
+    working_dir: /notes-api
+    volumes: 
+      - ./:/notes-api
+    environment: 
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 1161544761
+      MYSQL_DB: note
+
+  mysql:
+    image: mysql:5.7
+    volumes: 
+      - note-mysql-data:/var/lib/mysql
+    environment: 
+      MYSQL_ROOT_PASSWORD: 1161544761
+      MYSQL_DATABASE: note
+
+volumes: 
+  note-mysql-data:
