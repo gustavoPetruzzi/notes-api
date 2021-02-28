@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken');
 exports.signup = async (req, res, next) => {
   const errors = validationResult(req);
   const email = req.body.email;
-  const nickName = req.body.nickName;
+  const nickname = req.body.nickname;
   const password = req.body.password;
   try {
     if (!errors.isEmpty()) {
@@ -30,7 +30,7 @@ exports.signup = async (req, res, next) => {
     await User.create({
       email,
       password: hashedPassword,
-      nickName
+      nickname
     });
     return res.status(201).json({
       message: 'User created.'

@@ -6,7 +6,7 @@ const isAuth = require('../middleware/is-auth');
 router.get('/', isAuth, noteController.getNotes);
 
 router.post(
-  './',
+  '/',
   isAuth,
   [
     body('title').not().isEmpty(),

@@ -17,7 +17,7 @@ const User = sequelize.define('user', {
     type: Sequelize.STRING,
     allowNull: false
   },
-  nickName: {
+  nickname: {
     type: Sequelize.STRING,
     allowNull: false
   }
