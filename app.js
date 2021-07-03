@@ -9,7 +9,7 @@ const sequelize = require('./utils/database');
 
 // ROUTES
 const authRoutes = require('./routes/auth');
-
+const notesRoutes = require('./routes/note');
 app.use(bodyParser.json());
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -22,6 +22,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/auth', authRoutes);
+app.use('/notes', notesRoutes);
 
 app.use((error, req, res, next) => {
   const status = error.statusCode || 500;
