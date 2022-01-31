@@ -11,8 +11,9 @@ router.post(
   [
     body('title').not().isEmpty(),
     body('content').not().isEmpty(),
-    body('receiver').not().isEmpty().isNumeric(),
-    body('sender').not().isEmpty().isNumeric()
-  ]
+    body('receiverId').not().isEmpty().isNumeric(),
+    body('senderId').not().isEmpty().isNumeric()
+  ],
+  noteController.addNotes
 )
 module.exports = router;
