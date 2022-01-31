@@ -68,7 +68,7 @@ exports.addNotes = async (req, res, next) => {
     });
     return res.status(201).json({
       message: 'Board created',
-      boardId: newNote.dataValues.id
+      noteId: newNote.dataValues.id
     });
   } catch (error) {
     return handleError(res, error);
